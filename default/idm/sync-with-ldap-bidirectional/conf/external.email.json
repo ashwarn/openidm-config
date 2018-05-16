@@ -1,0 +1,28 @@
+{
+    "host" : "smtp.mailtrap.io",
+    "port" : "25",
+    "timeout" : 300000,
+    "writetimeout" : 300000,
+    "connectiontimeout" : 300000,
+    "auth" : {
+        "enable" : true,
+        "username" : "822392f42e762c",
+        "password" : {
+            "$crypto" : {
+                "type" : "x-simple-encryption",
+                "value" : {
+                    "cipher" : "AES/CBC/PKCS5Padding",
+                    "salt" : "n0u/72ejPBB0vizzjPVo8g==",
+                    "data" : "Kj6wKwqtC38gTcm1COcvKJVM4yGzOu/aOfOk+V5OptQ=",
+                    "iv" : "Eo2mSKz2MVn4+Mgi6ThXxw==",
+                    "key" : "openidm-sym-default",
+                    "mac" : "ORookT8k4Bu+GYjIcDYO7Q=="
+                }
+            }
+        }
+    },
+    "starttls" : {
+        "enable" : false
+    },
+    "from" : "no-reply@example.com"
+}
