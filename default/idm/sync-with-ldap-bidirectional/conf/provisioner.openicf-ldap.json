@@ -5,16 +5,13 @@
         "connectorName" : "org.identityconnectors.ldap.LdapConnector"
     },
     "configurationProperties" : {
-        "host" : "&{userstore.host}",
+        "host" : "172.17.0.3",
         "port" : 1389,
         "ssl" : false,
         "principal" : "cn=Directory Manager",
         "credentials" : "&{userstore.password}",
         "baseContexts" : [
-            "&{userstore.basecontext}"
-        ],
-        "baseContextsToSynchronize" : [
-            "&{userstore.basecontext}"
+            "o=userstore"
         ],
         "accountSearchFilter" : null,
         "accountSynchronizationFilter" : null,
@@ -54,7 +51,10 @@
         "blockSize" : 100,
         "uidAttribute" : "entryUUID",
         "maintainLdapGroupMembership" : false,
-        "respectResourcePasswordPolicyChangeAfterReset" : false
+        "respectResourcePasswordPolicyChangeAfterReset" : false,
+        "baseContextsToSynchronize" : [
+            "o=userstore"
+        ]
     },
     "resultsHandlerConfig" : {
         "enableNormalizingResultsHandler" : true,
@@ -299,5 +299,6 @@
             "denied" : false,
             "onDeny" : "DO_NOTHING"
         }
-    }
+    },
+    "enabled" : true
 }
